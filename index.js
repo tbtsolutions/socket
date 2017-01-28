@@ -7,19 +7,8 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  io.sockets.emit('gonder');
-    socket.on('dinle',function(data){
-      console.log("geldim");
-      io.emit('dinlegonder');
-    });
-
-    socket.on('deleteobjectUnity',function(data){
-        console.log(data);
-       io.sockets.emit('deleteobjectApi', data);
-    });
-    socket.on('deletedobjectApi',function(data){
-       console.log(data); 
-       io.sockets.emit('deletedobjectUnity',data);
+   socket.on('objectreceived',function(data){
+      io.sockets.emit('objectmessage', data);
     });
 });
 
