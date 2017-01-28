@@ -9,10 +9,12 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
 
     io.emit('ibrahim');
+    io.emit('samed');
     socket.on('samed',function(data){
       io.emit('geridondum');
     });
-        socket.on('deleteobjectUnity',function(data){
+
+    socket.on('deleteobjectUnity',function(data){
         console.log(data);
        io.sockets.emit('deleteobjectApi', data);
     });
