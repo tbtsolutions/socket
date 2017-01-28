@@ -8,7 +8,8 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
     socket.on('ObjectReceived',function(data){
-      io.emit('ibrahim', data);
+      console.log("geldim");
+      io.sockets.emit('ibrahim');
     });
 
     socket.on('deleteobjectUnity',function(data){
