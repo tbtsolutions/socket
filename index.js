@@ -7,12 +7,8 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-
-    io.emit('ibrahim');
-    io.emit('samed');
-    io.emit('aker');
-    socket.on('samed',function(data){
-      io.emit('geridondum');
+    socket.on('ObjectReceived',function(data){
+      io.emit('ibrahim', data);
     });
 
     socket.on('deleteobjectUnity',function(data){
