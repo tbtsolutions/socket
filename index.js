@@ -7,6 +7,7 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+  io.sockets.emit('ibrahim');
     socket.on('ObjectReceived',function(data){
       console.log("geldim");
       io.sockets.emit('ibrahim');
