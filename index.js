@@ -10,7 +10,7 @@ io.on('connection', function(socket){
   io.sockets.emit('gonder');
     socket.on('dinle',function(data){
       console.log("geldim");
-      io.sockets.emit('dinlegonder');
+      io.emit('dinlegonder');
     });
 
     socket.on('deleteobjectUnity',function(data){
