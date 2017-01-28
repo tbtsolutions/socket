@@ -7,10 +7,10 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  io.sockets.emit('ibrahim');
-    socket.on('ObjectReceived',function(data){
+  io.sockets.emit('gonder');
+    socket.on('dinle',function(data){
       console.log("geldim");
-      io.sockets.emit('ibrahim');
+      io.sockets.emit('dinlegonder');
     });
 
     socket.on('deleteobjectUnity',function(data){
