@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
    socket.on('objectreceived',function(data){
-      io.sockets.emit('objectmessage', data);
+      io.sockets.emit('objectmessage');
     });
 });
 
